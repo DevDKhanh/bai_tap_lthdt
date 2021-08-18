@@ -1,3 +1,6 @@
+//Bài 01(lthdtbai01.cpp): Tính diện tích và chu vi hình tam giác có 3 cạnh a,b,c. Ba cạnh a,b,c đọc vào
+//từ tệp văn bản "tamgiac.txt". Và lưu kết quả vào "ketqua-lthdtbai01.txt"
+
 #include <iostream>
 #include <fstream>
 #include <math.h>
@@ -8,7 +11,7 @@ using namespace std;
 int main()
 {   
     //Khai bao bien
-    double a, b, c, p, dTich, cVi;
+    float a, b, c, p, dTich, cVi;
 
     //Khai bao file de doc
 	ifstream fileInput("tamgiac.txt");
