@@ -3,17 +3,15 @@
 //Ghi dãy số sau khi thay đổi ra tệp "ketqua-lthdtbai01.txt". Y/c sử dụng mạng động chứa dãy số.
 
 #include <iostream>
-#include <math.h>
 #include <fstream>
 
 using namespace std;
 
 int main()
 {
-    ifstream fileIn("dayso.txt"); 
-
-    string a;
-    int * arr = new int[0];
+    ifstream fileIn; 
+    fileIn.open("dayso.txt", ios::out);
+    int * arr = new int[4];
     int i = 0;
 
     if(!fileIn) 
@@ -25,11 +23,11 @@ int main()
         ofstream fileOut("ketqua-lthdtbai01.txt");
         while(!fileIn.eof()) 
         { 
-            fileIn >> a; 
-            arr[i] = stoi(a);
+            fileIn >> arr[i]; 
             i++;
         } 
-
+        fileIn.close();
+        
         cout << "Mang truoc khi sap xep la: ";
         for (int j = 0; j < i; j++) {
             cout << arr[j] << " ";
@@ -58,8 +56,7 @@ int main()
         fileOut.close();
     }  
 
-    fileIn.close();
-
+    delete[] arr;
     cout << endl;
 
     return 0;
