@@ -18,3 +18,5 @@ Sắp xếp dãy số giảm dần theo giải thuật sủi bọt. Y/c viết 1
 1 hàm hoán đổi nội dung 2 ô nhớ và 1 hàm đưa dãy số trong mảng ra màn hình.
 
 II. LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG
+Bài 15(lthdtbai15.cpp): Tính diện tích và chu vi hình tam giác có 3 cạnh a,b,c. Ba cạnh a,b,c có thể nhập vào
+từ bàn phím hoặc từ tệp văn bản.
