@@ -11,7 +11,7 @@ int main()
 {
     ifstream fileIn; 
     fileIn.open("dayso.txt", ios::out);
-    int * arr = new int[4];
+    int * arr;
     int i = 0;
 
     if(!fileIn) 
@@ -20,43 +20,57 @@ int main()
     } 
     else 
     { 
+        while(!fileIn.eof()) 
+        { 
+            string s;
+            fileIn >> s; 
+            i++;
+        } 
+
+        //Cấp phát bộ nhớ cho arr
+        arr = new int[i];
+        i = 0;
+
+        //Đưa con trỏ về đầu file và đọc ghi giá trị vào arr
+        fileIn.seekg(0, ios::beg);
         ofstream fileOut("ketqua-lthdtbai01.txt");
         while(!fileIn.eof()) 
         { 
             fileIn >> arr[i]; 
             i++;
         } 
-        fileIn.close();
-        
+                
         cout << "Mang truoc khi sap xep la: ";
         for (int j = 0; j < i; j++) {
             cout << arr[j] << " ";
         }
 
-        //Sap xep mang
+        //Sắp xếp mảng
         for(int j=0; j < i-1; j++) {
             for (int k=j; k < i; k++){
-                if (arr[k] % 2 != 0) //Kiem tra neu la so le thi thuc thi
+                if (arr[k] % 2 != 0) //Nếu là số lẻ sẽ thực thi
                 {
-                    int t = arr[j]; //Tao bien t gan t = arr[j]
-                    arr[j]=arr[k]; //Gan arr[j] = arr[k]
-                    arr[k]=t; //Gan arr[k] = arr[t]
+                    int t = arr[j]; //Tạo biến t gắn t = arr[j]
+                    arr[j]=arr[k]; //Gán arr[j] = arr[k]
+                    arr[k]=t; //Gán arr[k] = arr[t]
 
-                    break; //Thoat khoi vong lap
+                    break; //Thoát khỏi vòng lặp
                 }
             }
         }
 
         cout << "\nMang sau khi sap xep la: ";
         for (int j = 0; j < i; j++) {
-            fileOut << arr[j] << " "; //Ghi ket qua vao file
+            fileOut << arr[j] << " "; //Ghi kết quả vào file
             cout << arr[j] << " ";
         }
 
+        //Đóng file
         fileOut.close();
+        fileIn.close();
     }  
 
-    delete[] arr;
+    delete[] arr; //Trả lại bộ nhớ cho chương trình
     cout << endl;
 
     return 0;

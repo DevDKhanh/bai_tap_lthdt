@@ -11,26 +11,42 @@ using namespace std;
 void change(int i, int j);
 void sort_arr(int n);
 void show_arr(string s, int a);
-int * arr = new int[10];
+static int * arr;
 
 int main(){
 	ifstream fileOut;
 	fileOut.open("daysonguyen.txt", ios::out);
 	int count = 0;
 
+	// Đếm số phần tử trong mảng
+	while (!fileOut.eof()){
+		string s;
+		fileOut >> s;
+		count++;
+	}
+
+	//Cấp phát bộ nhớ động cho arr
+	arr = new int[count];
+	count = 0;
+
+	//Đưa con trỏ về đầu mảng về lưu giá trị vào arr
+	fileOut.seekg(0, ios::beg);
 	while (!fileOut.eof()){
 		fileOut >> arr[count];
 		count++;
 	}
 
+	//Đóng tệp in ra mảng ban đầu
 	fileOut.close();
 	show_arr("Mang doc tu tep la:\n", count);
 
+	//Sắp xếp in ra mảng đã được sắp xếp
 	sort_arr(count);
     show_arr("\nMang da duoc sap xep la:\n", count);
     
-    delete[] arr;
+    delete[] arr; //Trả lại bộ nhớ cho chương trình
     cout << endl;
+
 	return 0;
 }
 

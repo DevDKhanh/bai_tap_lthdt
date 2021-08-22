@@ -16,3 +16,5 @@ Ghi dãy số sau khi thay đổi ra tệp "ketqua-lthdtbai01.txt". Y/c sử d�
 Bài 11(lthdtbai11.cpp):Đọc dãy số nguyên có n phần tử từ tệp văn bản "daysonguyen.txt" vào mảng động.
 Sắp xếp dãy số giảm dần theo giải thuật sủi bọt. Y/c viết 1 hàm sắp xếp dãy số giảm dần,
 1 hàm hoán đổi nội dung 2 ô nhớ và 1 hàm đưa dãy số trong mảng ra màn hình.
+
+II. LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG
