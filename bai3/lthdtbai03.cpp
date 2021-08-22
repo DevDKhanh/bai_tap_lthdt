@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
     ifstream fileIn; 
-    fileIn.open("dayso.txt", ios::out);
+    fileIn.open("dayso.txt", ios::in);
     int * arr;
     int i = 0;
 
@@ -32,6 +32,7 @@ int main()
         i = 0;
 
         //Đưa con trỏ về đầu file và đọc ghi giá trị vào arr
+        fileIn.clear();
         fileIn.seekg(0, ios::beg);
         ofstream fileOut("ketqua-lthdtbai01.txt");
         while(!fileIn.eof()) 

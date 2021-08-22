@@ -15,7 +15,7 @@ static int * arr;
 
 int main(){
 	ifstream fileOut;
-	fileOut.open("daysonguyen.txt", ios::out);
+	fileOut.open("daysonguyen.txt", ios::in);
 	int count = 0;
 
 	// Đếm số phần tử trong mảng
@@ -30,6 +30,7 @@ int main(){
 	count = 0;
 
 	//Đưa con trỏ về đầu mảng về lưu giá trị vào arr
+	fileOut.clear();
 	fileOut.seekg(0, ios::beg);
 	while (!fileOut.eof()){
 		fileOut >> arr[count];
