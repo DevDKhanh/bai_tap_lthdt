@@ -7,7 +7,7 @@
 
 using namespace std;
 
-//Khoi tao class Tamgiac
+//class Tamgiac
 class Tamgiac
 {
     private:
@@ -29,7 +29,7 @@ class Tamgiac
         //Dien tich tam giac
         float getArea()
         {
-            float p = (a+b+c)/2;
+            float p = getPerimeter()/2;
             float o = (p-a)*(p-b)*(p-c);
             return sqrt(p*o);
 
@@ -39,9 +39,23 @@ class Tamgiac
 int main()
 {   
     float a, b, c;
-    cout << "Nhap lan luot cac canh cua tam giac" << endl;
-    cin >> a >> b >> c;
+
+    //Nhập vào 2 canh của tam giác
+    while(true) {
+        cout << "Nhap lan luot cac canh cua tam giac" << endl;
+        cin >> a >> b >> c;
+
+        //Kiểm tra điều kiện 3 cạnh
+        if (a+b>c && a+c>b && b+c>a)
+            break;
+        else
+            cout << "Ba canh vua nhap khong phai ba canh cua tam giac";
+    }
+
+    //Khởi tạo class với 3 đối số được truyền vào
     Tamgiac tamgiac(a, b, c);
+
+    //In ra màn hình chu vi và diện tích
     cout << "Chu vi tam giac la: " << tamgiac.getPerimeter() << endl;
     cout << "Dien tich tam giac la: " << tamgiac.getArea() << endl;
     cout << endl;
