@@ -44,7 +44,6 @@ int main()
     Tamgiac tamgiac(a, b, c);
     cout << "Chu vi tam giac la: " << tamgiac.getPerimeter() << endl;
     cout << "Dien tich tam giac la: " << tamgiac.getArea() << endl;
-    cout << endl;
 
     return 0;
 }
