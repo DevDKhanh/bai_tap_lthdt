@@ -11,7 +11,7 @@ using namespace std;
 void change(int i, int j);
 void sort_arr(int n);
 void show_arr(string s, int a);
-static int * arr;
+int * arr;
 
 int main(){
 	ifstream fileOut;

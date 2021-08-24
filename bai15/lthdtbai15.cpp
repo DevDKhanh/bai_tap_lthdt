@@ -14,42 +14,36 @@ class Tamgiac
         float a, b, c;
     public:
         //Nhap 3 canh a, b, c
-        void nhap()
-        {
-            cout << "Nhap lan luot 3 canh cua tam giac:" << endl;
-            for (int i = 1; i <= 3; i++)
-            {
-                cout << "Canh thu " << i << ": ";
-                if (i==1) cin >> a;
-                if (i==2) cin >> b;
-                if (i==3) cin >> c;
-            }
+        Tamgiac(float a, float b, float c) {
+            this->a = a;
+            this->b = b;
+            this->c = c;
         }
 
         //Tinh chu vi
-        void chuVi()
+        float getPerimeter()
         {
-            cout << "Chu vi cua tam giac la: " << a+b+c << endl;
+            return a+b+c;
         }
 
         //Dien tich tam giac
-        void dienTich()
+        float getArea()
         {
             float p = (a+b+c)/2;
             float o = (p-a)*(p-b)*(p-c);
-            cout << "Dien tich cua tam giac la: " << sqrt(p*o) << endl;
+            return sqrt(p*o);
 
         }
 };
 
 int main()
-{
-    Tamgiac tamgiac;
-
-    tamgiac.nhap();
-    tamgiac.chuVi();
-    tamgiac.dienTich();
-
+{   
+    float a, b, c;
+    cout << "Nhap lan luot cac canh cua tam giac" << endl;
+    cin >> a >> b >> c;
+    Tamgiac tamgiac(a, b, c);
+    cout << "Chu vi tam giac la: " << tamgiac.getPerimeter() << endl;
+    cout << "Dien tich tam giac la: " << tamgiac.getArea() << endl;
     cout << endl;
 
     return 0;
