@@ -58,7 +58,6 @@ int main()
     //In ra màn hình chu vi và diện tích
     cout << "Chu vi tam giac la: " << tamgiac.getPerimeter() << endl;
     cout << "Dien tich tam giac la: " << tamgiac.getArea() << endl;
-    cout << endl;
 
     return 0;
 }
