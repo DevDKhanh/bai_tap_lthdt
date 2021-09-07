@@ -30,7 +30,7 @@ int main()
 }
 
 //===Chuong trinh ham===
-//Tinh cac phan cua bieu thuc: x - x^3/3! + x^5/5! + ... + (-1)^n * x^(2*n+1)/(2*n+1)! + ...
+// 
 float F(float x,int n) {
 
     int a;
