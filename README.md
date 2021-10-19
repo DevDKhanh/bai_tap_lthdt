@@ -1,8 +1,5 @@
 # Bài tập lập trình hướng đối tượng (C++)
 
-"Hãy ngồi xuống để tôi kể cho bạn nghe về idol của tôi. Nhớ ngước mắt lên để câu
-chuyên bắt đầu..."
-
 I. NGÔN NGỮ C++
 
 Bài 01(lthdtbai01.cpp): Tính diện tích và chu vi hình tam giác có 3 cạnh a,b,c.
