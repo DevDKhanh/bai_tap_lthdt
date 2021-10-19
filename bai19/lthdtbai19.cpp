@@ -25,6 +25,7 @@ class Diem
         //Ham ban
         friend istream& operator>>(istream &cin,Diem &d);
         friend ostream& operator<<(ostream &cout,Diem &d);
+        float operator+(Diem d)  ;
 };
 
 //===Chuong trinh chinh===
@@ -40,7 +41,7 @@ int main()
 
     cout<<"\nDiem A"<<A;
     cout<<"\nDiem B"<<B;
-    printf("\nKhoang cach AB = %0.1f",A.tinhKC(B));
+    printf("\nKhoang cach AB = %0.1f",A+B);
 
     cout<<endl;
     return 0;
@@ -54,11 +55,6 @@ Diem::Diem():x(0),y(0)
 Diem::Diem(float x, float y):x(x),y(y)
 {
 
-}
-
-float Diem::tinhKC(Diem &d2)
-{
-    return sqrt((d2.x-x)*(d2.x-x) + (d2.y-y)*(d2.y-y));
 }
 
 //Ham ban, ham thong thuong khong nam tron doi tuong
@@ -75,4 +71,9 @@ ostream& operator<<(ostream &cout,Diem &d)
     cout<<"("<<d.x<<","<<d.y<<")";
 
     return cout;
+}
+
+float Diem::operator+(Diem d)
+{
+    return sqrt((d.x-x)*(d.x-x) + (d.y-y)*(d.y-y));
 }
